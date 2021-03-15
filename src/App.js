@@ -18,15 +18,17 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <h1>Login</h1>
-      <input type="text" onChange={(event) =>{setUserNameState(event.target.value)}}/>     
-      <input type="password" onChange={(event) =>{setPasswordState(event.target.value)}}/>     
-      <button onClick={login}>Submit</button>
+    <div className="App">     
 
-     {loggedIn && (
-       <h1>Logged In</h1>
-     )} 
+     {loggedIn ? 
+       <h1>Logged In</h1> :
+       <div>
+          <h1>Login</h1>
+          <input type="text" onChange={(event) =>{setUserNameState(event.target.value)}}/>     
+          <input type="password" onChange={(event) =>{setPasswordState(event.target.value)}}/>     
+          <button onClick={login}>Submit</button>
+      </div>    
+     } 
     </div>
   );
 }
